@@ -10,6 +10,9 @@ use Yii;
  * @property integer $id
  * @property string $username
  * @property string $password
+ * @property integer $anchor
+ * @property integer $state
+ * @property string $sealtime
  */
 class Admin extends \yii\db\ActiveRecord
 {
@@ -27,6 +30,8 @@ class Admin extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['anchor', 'state'], 'integer'],
+            [['sealtime'], 'safe'],
             [['username'], 'string', 'max' => 50],
             [['password'], 'string', 'max' => 32],
         ];
@@ -41,6 +46,9 @@ class Admin extends \yii\db\ActiveRecord
             'id' => 'ID',
             'username' => 'Username',
             'password' => 'Password',
+            'anchor' => 'Anchor',
+            'state' => 'State',
+            'sealtime' => 'Sealtime',
         ];
     }
 }

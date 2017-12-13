@@ -8,7 +8,7 @@ use backend\models\LoginForm;
 use yii\web\Controller;
 
 use app\models\Admin;
-
+// 登录&注册
 class LoginController extends Controller
 {
 

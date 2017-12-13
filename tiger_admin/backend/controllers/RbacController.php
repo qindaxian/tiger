@@ -10,7 +10,7 @@ use app\models\Role_Rbac;
 use app\models\Admin_Role;
 
 /**
- * 权限
+ * 权限&角色
  */
 class RbacController extends CommonController
 {

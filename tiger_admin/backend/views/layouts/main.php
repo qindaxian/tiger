@@ -274,14 +274,14 @@ AppAsset::register($this);
 
                             <ul class="submenu">
                                 <li>
-                                    <a href="form-elements.html">
+                                    <a href="<?=Url::toRoute(['anchor/index'])?>">
                                         <i class="icon-double-angle-right"></i>
-                                        发布公告
+                                        主播列表
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="form-wizard.html">
+                                    <a href="<?=Url::toRoute(['cat/add'])?>">
                                         <i class="icon-double-angle-right"></i>
                                         进入论坛
                                     </a>
