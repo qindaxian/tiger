@@ -224,14 +224,14 @@ AppAsset::register($this);
 
                             <ul class="submenu">
                                 <li>
-                                    <a href="<?=Url::toRoute(['Gift/add'])?>">
+                                    <a href="<?=Url::toRoute(['gift/add'])?>">
                                         <i class="icon-double-angle-right"></i>
                                         添加礼物
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="<?=Url::toRoute(['Gift/list'])?>">
+                                    <a href="<?=Url::toRoute(['gift/list'])?>">
                                         <i class="icon-double-angle-right"></i>
                                         礼物列表
                                     </a>
@@ -280,12 +280,12 @@ AppAsset::register($this);
                                     </a>
                                 </li>
 
-                                <li>
-                                    <a href="<?=Url::toRoute(['cat/add'])?>">
-                                        <i class="icon-double-angle-right"></i>
-                                        进入论坛
-                                    </a>
-                                </li>
+<!--                                <li>-->
+<!--                                    <a href="--><?//=Url::toRoute(['cat/add'])?><!--">-->
+<!--                                        <i class="icon-double-angle-right"></i>-->
+<!--                                        进入论坛-->
+<!--                                    </a>-->
+<!--                                </li>-->
 
                             </ul>
                         </li>

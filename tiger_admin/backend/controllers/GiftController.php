@@ -2,27 +2,38 @@
 
 namespace backend\controllers;
 
-use app\models\Admin; // 用户表
 use yii;
+use yii\web\Controller;
+use app\models\Gift; // 用户表
 
-class AnchorController extends \yii\web\Controller
+
+class GiftController extends Controller
 {
     public $enableCsrfValidation = false; // post 提交时 关闭框架自带的防某种攻击
 
-    // 主博列表
     public function actionIndex()
     {
-        //用户
-        $admin = Admin::find()->select('id,username,password,anchor,state,sealtime')->where(['state'=>1,'anchor'=>1])->orderBy('id ASC')->asArray()->all();
-        $data['data'] = json_encode($admin);
-
-        return $this->render('index',$data);
+        return $this->render('index');
     }
+
+    public function actionList()
+    {
+        //用户
+        $Gift = Gift::find()->select('id,g_name,g_img,g_num')->orderBy('id ASC')->asArray()->all();
+        $data['data'] = json_encode($Gift);
+        return $this->render('list',$data);
+    }
+
+    public function actionAdd()
+    {
+        return $this->render('add');
+    }
+
     // 添加,展示.删除
     public function actionAa()
     {
 
-        $model = new Admin();
+        $model = new Gift();
         $post = Yii::$app->request->post();
 //        var_dump($post);exit;
 
@@ -39,19 +50,16 @@ class AnchorController extends \yii\web\Controller
         }
         // 删除
         if (!empty($post['oper']) && $post['oper'] == 'del'){
-            Admin::findOne($post['id'])->delete(); //删除主键为$id变量值的数据记录；
+            Gift::findOne($post['id'])->delete(); //删除主键为$id变量值的数据记录；
             return true;
         }
         //修改
         $res = $model->find()->where(['id'=>$post['id']])->one();
-        $res->username = $post['username'];
-        $res->anchor   = $post['anchor'];
-        $res->state    = $post['state'];
-        $res->sealtime = $post['sealtime'];
+        $res->g_name = $post['g_name'];
+        $res->g_img  = $post['g_img'];
+        $res->g_num  = $post['g_num'];
         $res->save();
         return true;
 
     }
-
 }
-

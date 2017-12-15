@@ -29,7 +29,7 @@
             <div id="grid-pager"></div>
 
             <script type="text/javascript">
-                var $path_base = "index.php?r=anchor/aa";//this will be used in gritter alerts containing images
+                var $path_base = "index.php?r=gift/aa";//this will be used in gritter alerts containing images
             </script>
 
             <!-- PAGE CONTENT ENDS -->
@@ -51,7 +51,7 @@
                 data: grid_data,
                 datatype: "local",
                 height: 400,
-                colNames:[' 操作', '序列','主播名称','是否为主播','是否封号','封号结束时间'],
+                colNames:[' 操作', '序列','礼物名称','礼物图片','礼物价格'],
                 colModel:[
                     {name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,
                         formatter:'actions',
@@ -61,15 +61,12 @@
                             // editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
                         }
                     },
-                    {name:'id',index:'id', width:60, sorttype:"int", editable: false},
+                    {name:'g_id',index:'g_id', width:60, sorttype:"int", editable: false},
 
-                    {name:'username',index:'name', width:50,editable: true,editoptions:{size:"20",maxlength:"30"}},
-                    // {name:'password',index:'name', width:50,editable: true,editoptions:{size:"20",maxlength:"30"}},
-                    {name:'anchor',index:'name', width:50,editable: true,editoptions:{size:"20",maxlength:"30"}},
-                    {name:'state',index:'name', width:50,editable: true,editoptions:{size:"20",maxlength:"30"}},
-                    {name:'sealtime',index:'name', width:50,editable: true,sorttype:"date",unformat: pickDate,editoptions:{size:"20",maxlength:"30"}},
-                    // {name:'date',index:'date', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}},
-                    // {name:'note',index:'note', width:150, sortable:false,editable: true,edittype:"textarea", editoptions:{rows:"2",cols:"10"}}
+                    {name:'g_name',index:'name', width:50,editable: true,editoptions:{size:"20",maxlength:"30"}},
+                    {name:'g_img',index:'name', width:50,editable: true,editoptions:{size:"20",maxlength:"30"}},
+                    {name:'g_num',index:'name', width:50,editable: true,editoptions:{size:"20",maxlength:"30"}},
+
                 ],
 
                 viewrecords : true,
